@@ -1,0 +1,1 @@
+python train.py --task nc --dataset airport --model HyboNet --dim 16 --lr 0.02 --dim 16 --num-layers 6 --act relu --bias 1 --dropout 0 --weight-decay 1e-4 --manifold Lorentz --log-freq 5 --cuda 0 --patience 500 --grad-clip 1 --seed 1234

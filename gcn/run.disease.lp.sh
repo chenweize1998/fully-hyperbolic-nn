@@ -1,0 +1,1 @@
+python train.py --task lp --dataset disease_lp --model HyboNet --dim 16 --num-layers 2 --bias 1 --normalize-feats 0 --manifold Lorentz --log-freq 5 --lr 0.005 --weight-decay 0 --margin 30 --dropout 0 --grad-clip 0.5 --cuda 0 --patience 500 --seed 1234
