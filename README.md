@@ -1,6 +1,7 @@
 # Fully Hyperbolic Neural Networks
 
-**Note: The paper is still under review. We may modify the code and the paper in the future.**
+⚠️**Note: The paper is still under review. We may modify the code and the paper in the future.**
+
 
 We present the codes for the experiments in [Fully Hyperbolic Neural Networks](https://arxiv.org/abs/2105.14686) . The directory `kg` contains codes for knowledge graph completion, `gcn` contains codes for network embedding, `mt` contains codes for machine translation. 
 
