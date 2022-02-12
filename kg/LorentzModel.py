@@ -9,9 +9,9 @@ from manifolds import Lorentz
 
 def lorentz_linear(x, weight, scale, bias=None):
     x = x @ weight.transpose(-2, -1)
+    time = x.narrow(-1, 0, 1).sigmoid() * scale + 1.1
     if bias is not None:
         x = x + bias
-    time = x.narrow(-1, 0, 1).sigmoid() * scale + 1.1
     x_narrow = x.narrow(-1, 1, x.shape[-1] - 1)
     x_narrow = x_narrow / ((x_narrow * x_narrow).sum(dim=-1, keepdim=True) / (time * time - 1)).sqrt()
     x = torch.cat([time, x_narrow], dim=-1)
