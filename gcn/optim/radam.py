@@ -2,7 +2,6 @@ import torch.optim
 
 from optim.mixin import OptimMixin
 from geoopt import ManifoldParameter, ManifoldTensor
-from geoopt.utils import copy_or_set_
 from torch.nn.utils.clip_grad import clip_grad_norm_
 
 
