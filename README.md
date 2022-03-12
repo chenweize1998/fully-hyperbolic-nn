@@ -13,5 +13,4 @@ If you use our code, please cite us as follows
   journal={arXiv preprint arXiv:2105.14686},
   year={2021}
 }
-{"mode":"full","isActive":false}
 ```
