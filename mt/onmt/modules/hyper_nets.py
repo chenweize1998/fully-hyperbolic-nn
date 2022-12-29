@@ -48,9 +48,9 @@ class LorentzLinear(nn.Module):
         else:
             x = self.weight(
                 self.dropout(x.flatten(-2)))
-        x_narrow = x.narrow(-1, 1, x.shape[-1] - 1)
         if bias is not None:
             x = x + bias
+        x_narrow = x.narrow(-1, 1, x.shape[-1] - 1)
         time = x.narrow(-1, 0, 1).sigmoid() * self.scale.exp() + 1.1
         scale = (time * time - self.manifold.k) / \
             (x_narrow * x_narrow).sum(dim=-1, keepdim=True)
