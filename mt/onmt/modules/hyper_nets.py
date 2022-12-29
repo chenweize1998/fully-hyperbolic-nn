@@ -48,6 +48,10 @@ class LorentzLinear(nn.Module):
         else:
             x = self.weight(
                 self.dropout(x.flatten(-2)))
+        # The following code has some inconsistency to Eq.7 in the paper. When calculating the time axis, 
+        # we do not consider the bias in Eq.7, while we add the bias before determining time axis. 
+        # It is a small bug here. However, both methods give mathematically correct results.
+        # For reproducibility, we leave it unchanged here.
         if bias is not None:
             x = x + bias
         x_narrow = x.narrow(-1, 1, x.shape[-1] - 1)
